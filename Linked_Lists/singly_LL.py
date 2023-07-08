@@ -68,11 +68,48 @@ class SingleLinkedList:
                 node = node.next
             return 'Element does not exist'
         
+    #Deleting a node
+    def deleteNode(self, location):
+        if self.head is None:
+            print('Single LInked List does not exist')
+        else:
+            if location == 0: #Deleting first node in the SLL
+                if self.head == self.tail: #If the SLL has only one node
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next #Changing head's reference to the next node.
+            
+            elif location == -1: #Deleting the last node
+                if self.head == self.tail: #If the SLL has only one node
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    while node is not None:
+                        if node.next == self.tail:
+                            break
+                        node = node.next
+                    node.next = None
+                    self.tail = node
+            else: #Deleting a node
+                tempNode = self.head
+                index = 0
+                while index < location - 1:
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = nextNode.next
+
+
 sLL = SingleLinkedList()
 sLL.insertSLL(0,0)
 sLL.insertSLL(1,-1)
 sLL.insertSLL(2,-1)
 sLL.insertSLL(3,-1)
 sLL.insertSLL(4,-1)
-print(sLL.searchList(3))
+sLL.insertSLL(5,-1)
+sLL.insertSLL(7,-1)
+sLL.deleteNode(0)
+sLL.traverseList()
 
