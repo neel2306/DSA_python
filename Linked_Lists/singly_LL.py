@@ -55,12 +55,24 @@ class SingleLinkedList:
             while node is not None:
                 print(node.value)
                 node = node.next
-
+    
+    #To search for an element.
+    def searchList(self,element):
+        if self.head is None:
+            return 'Single Linked List does not exist'
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == element:
+                    return "Element exists: ", node.value
+                node = node.next
+            return 'Element does not exist'
+        
 sLL = SingleLinkedList()
 sLL.insertSLL(0,0)
 sLL.insertSLL(1,-1)
 sLL.insertSLL(2,-1)
 sLL.insertSLL(3,-1)
 sLL.insertSLL(4,-1)
+print(sLL.searchList(3))
 
-sLL.traverseList()
