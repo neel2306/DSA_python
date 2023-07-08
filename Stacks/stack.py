@@ -15,6 +15,28 @@ class Stack:
         else:
             return False
 
-customStack = Stack()
-print(customStack.isEmpty())
+    def push(self,value):
+        self.list.append(value)
+        return "Element has been added to the stack"
     
+    def pop(self):
+        if self.isEmpty():
+            return "Stack does not exist"
+        else:
+            return self.list.pop()
+    
+    def peek(self):
+        if self.isEmpty():
+            return "Stack does not exist"
+        else:
+            return self.list[-1]
+
+
+
+
+customStack = Stack()
+customStack.push(1)
+customStack.push(2)
+customStack.push(3)
+customStack.push(5)
+print(customStack.peek())
