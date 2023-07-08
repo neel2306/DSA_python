@@ -45,13 +45,22 @@ class SingleLinkedList:
                 newNode.next = nextNode
                 if tempNode == self.tail:
                     self.tail = newNode
+    
+    #Traversing through a SLL
+    def traverseList(self):
+        if self.head is None:
+            print('Single Linked List doesnt exist')
+        else:
+            node = self.head
+            while node is not None:
+                print(node.value)
+                node = node.next
 
 sLL = SingleLinkedList()
-sLL.insertSLL(1,1)
+sLL.insertSLL(0,0)
+sLL.insertSLL(1,-1)
 sLL.insertSLL(2,-1)
 sLL.insertSLL(3,-1)
 sLL.insertSLL(4,-1)
-sLL.insertSLL(5,-1)
-sLL.insertSLL(3.5,4)
-print([node.value for node in sLL])
-   
+
+sLL.traverseList()
