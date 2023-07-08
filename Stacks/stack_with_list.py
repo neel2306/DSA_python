@@ -31,6 +31,12 @@ class Stack:
         else:
             return self.list[-1]
 
+    def deleteStack(self):
+        if self.isEmpty():
+            return "Stack does not exist"
+        else:
+            if (input('Do you want to delete the stack?').upper()) == 'Y':
+                self.list = None
 
 
 
