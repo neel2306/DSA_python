@@ -101,7 +101,14 @@ class SingleLinkedList:
                 nextNode = tempNode.next
                 tempNode.next = nextNode.next
 
-
+    def deleteList(self):
+        if self.head is None:
+            print('Single Linked List does not exist!')
+        if (input('Do you really want to delete the list?').upper()) == "Y":
+            self.head = None
+            self.tail = None
+            print('Deleted the list!')
+'''
 sLL = SingleLinkedList()
 sLL.insertSLL(0,0)
 sLL.insertSLL(1,-1)
@@ -110,6 +117,7 @@ sLL.insertSLL(3,-1)
 sLL.insertSLL(4,-1)
 sLL.insertSLL(5,-1)
 sLL.insertSLL(7,-1)
-sLL.deleteNode(0)
 sLL.traverseList()
-
+sLL.deleteList()
+sLL.traverseList()
+'''
